@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#1a0b2e">
+    <meta name="description"
+        content="An enchanted, interactive, and unforgettable birthday surprise experience created with love and magic.">
+    <meta name="keywords" content="Happy Birthday, Birthday Surprise, Best Friend, Celebration, Interactive Card">
+
+    <title>✨ Happy 21st Birthday, Queen! | Born Oct 16, 2005</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Mukta+Malar:wght@400;500;600;700;800&family=Noto+Serif+Tamil:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/gift_box.jpg" type="image/jpeg">
+</head>
+
+<body>
+    <!-- Background Canvas for Interactive Stardust & Fireworks -->
+    <canvas id="magic-canvas" class="magic-canvas"></canvas>
+    <div class="cosmic-glow-layer"></div>
+
+    <!-- Cursor Sparkle Trail Element -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+
+    <!-- ==========================================
+         PHASE 1: THE GRAND SURPRISE UNBOXING GATE
+         ========================================== -->
+    <div id="surprise-gate" class="surprise-gate">
+        <div class="stars-bg"></div>
+        <div class="nebula-glow"></div>
+
+        <div class="gate-content">
+            <div class="sparkle-badge">
+                <span class="badge-icon">✨</span> Special 21st Birthday Surprise • Born Oct 16, 2005 <span
+                    class="badge-icon">✨</span>
+            </div>
+
+            <h1 class="gate-title">
+                To My Most Cherished <br>
+                <span class="highlight-text dynamic-recipient">Grace</span> 💖
+            </h1>
+
+            <p class="gate-subtitle">
+                A universe celebrating 21 incredible years of sunshine, laughter, and pure magic.
+            </p>
+
+            <div class="gift-box-wrapper" id="gift-box-trigger" title="Click to open your birthday surprise!">
+                <div class="gift-aura"></div>
+                <div class="gift-box-3d" id="gift-box-card">
+                    <img src="assets/gift_box.jpg" alt="Enchanted Birthday Gift Box" class="gift-box-img">
+                    <div class="ribbon-glow"></div>
+                    <div class="click-pulse-indicator">
+                        <span class="tap-hand">👆</span>
+                        <span class="tap-text">Tap To Open!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gate-action">
+                <button class="btn-unlock-magic" id="btn-open-box">
+                    <span class="btn-sparkle">✨</span> Open Your Birthday Surprise <span class="btn-sparkle">🎉</span>
+                </button>
+                <p class="audio-hint">🎧 Turn your volume up for the best experience!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         PHASE 2: MAIN CELEBRATION UNIVERSE
+         ========================================== -->
+    <div id="main-universe" class="main-universe">
+
+        <!-- Floating Glassmorphic Top Navigation & Sound Controller -->
+        <header class="glass-navbar">
+            <div class="nav-brand">
+                <span class="brand-crown">👑</span>
+                <span class="brand-text">Happy 21st Birthday <span class="dynamic-recipient">Grace</span></span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#hero" class="nav-item active">✨ Home</a>
+                <a href="#cake-section" class="nav-item">🎂 Cake</a>
+                <a href="#memories-section" class="nav-item">📸 Memories</a>
+                <a href="#wishing-jar-section" class="nav-item">🔮 Wishing Jar</a>
+                <a href="#letter-section" class="nav-item">💌 Secret Letter</a>
+                <a href="#quiz-section" class="nav-item">🏆 Bestie Trivia</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="audio-toggle-btn" class="nav-btn sound-btn" title="Toggle Magical Birthday Melody"
+                    aria-label="Toggle Music">
+                    <div class="sound-bars" id="sound-bars">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <span id="audio-btn-label" class="btn-text">Music ON</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- HERO SECTION: The Royal Welcome & Countdown -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="spinning-star">⭐</span> BORN OCTOBER 16, 2005 • CELEBRATING 21 GLORIOUS YEARS <span
+                        class="spinning-star">⭐</span>
+                </div>
+
+                <h1 class="hero-main-title">
+                    Happy 21st Birthday, <br>
+                    <span class="gradient-text dynamic-recipient glow-title">Grace</span>! 👑✨
+                </h1>
+
+                <p class="hero-tagline dynamic-tagline">
+                    "21 years of grace, kindness, and bringing sunshine to everyone blessed to know you."
+                </p>
+
+                <!-- Interactive 21st Birthday Live Countdown Vault -->
+                <div class="birthday-countdown-vault" id="countdown-vault">
+                    <div class="vault-glowing-aura"></div>
+
+                    <div class="vault-header">
+                        <span class="vault-pill-badge">👑 21ST BIRTHDAY MILESTONE</span>
+                        <h3 class="vault-title" id="countdown-headline">
+                            ⏳ Countdown to October 16, 2026
+                        </h3>
+                        <p class="vault-subtitle" id="countdown-substatus">
+                            Counting down every magical second until Grace turns 21! ✨
+                        </p>
+                    </div>
+
+                    <!-- Live Ticking Countdown Units (Days : Hours : Minutes : Seconds) -->
+                    <div class="live-countdown-grid" id="countdown-grid">
+                        <div class="countdown-unit-box">
+                            <div class="unit-glass-card">
+                                <span class="unit-number" id="timer-days">00</span>
+                            </div>
+                            <span class="unit-label">DAYS</span>
+                        </div>
+
+                        <div class="countdown-separator">:</div>
+
+                        <div class="countdown-unit-box">
+                            <div class="unit-glass-card">
+                                <span class="unit-number" id="timer-hours">00</span>
+                            </div>
+                            <span class="unit-label">HOURS</span>
+                        </div>
+
+                        <div class="countdown-separator">:</div>
+
+                        <div class="countdown-unit-box">
+                            <div class="unit-glass-card">
+                                <span class="unit-number" id="timer-minutes">00</span>
+                            </div>
+                            <span class="unit-label">MINUTES</span>
+                        </div>
+
+                        <div class="countdown-separator">:</div>
+
+                        <div class="countdown-unit-box">
+                            <div class="unit-glass-card pulse-active">
+                                <span class="unit-number timer-sec" id="timer-seconds">00</span>
+                            </div>
+                            <span class="unit-label">SECONDS</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Celebration Spark Ribbon -->
+                    <div class="vault-interaction-footer">
+                        <button class="btn-spark-celebrate" id="btn-spark-hero" onclick="triggerHeroCelebration(this)">
+                            <span class="sparkle-icon">✨</span>
+                            <span>Shower Birthday Love & Confetti</span>
+                            <span class="sparkle-icon">🎉</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-cta-group">
+                    <button class="btn-primary" onclick="scrollToSection('cake-section')">
+                        <span>🎂</span> Make a Birthday Wish
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('letter-section')">
+                        <span>💌</span> Read Secret Letter
+                    </button>
+                    <button class="btn-accent" onclick="scrollToSection('quiz-section')">
+                        <span>🏆</span> Bestie Challenge
+                    </button>
+                </div>
+
+                <!-- Cute Compact Scroll Cue -->
+                <div class="scroll-down-cue" onclick="scrollToSection('cake-section')">
+                    <span class="cue-heart">✨</span>
+                    <span class="cue-text">Scroll for Magic</span>
+                    <span class="bouncing-arrow">↓</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INTERACTIVE 3D CAKE & CANDLE CEREMONY -->
+        <section class="section-container cake-section" id="cake-section">
+            <div class="section-header">
+                <span class="section-pill">🎂 The Grand Ceremony</span>
+                <h2 class="section-title">Blow the Candles & Make a Wish!</h2>
+                <p class="section-subtitle">Swipe or tap across the candle flames, or press the breath button to blow
+                    out the fire and manifest your dream!</p>
+            </div>
+
+            <div class="cake-ceremony-card">
+                <div class="cake-display-stage">
+                    <div class="cake-image-wrapper" id="cake-image-wrapper">
+                        <!-- Lit Cake Base -->
+                        <img src="assets/cake.jpg" alt="Luxury Birthday Cake" class="cake-img cake-lit"
+                            id="cake-main-img">
+                        <!-- Blown-Out Extinguished Cake Base -->
+                        <img src="assets/cake_blown_out.jpg" alt="Extinguished Birthday Cake"
+                            class="cake-img cake-blown" id="cake-blown-img">
+
+                        <!-- High-Performance Canvas Realistic Flame & Smoke Engine -->
+                        <canvas id="cake-flames-canvas" class="cake-flames-canvas"></canvas>
+                        <div class="wind-gust-effect" id="wind-gust-effect"></div>
+                    </div>
+
+                    <div class="cake-interact-tip">
+                        <span>💨 Swipe your finger or click across the candles to blow them out!</span>
+                    </div>
+                </div>
+
+                <div class="cake-controls">
+                    <div class="wish-status-banner" id="wish-status-banner">
+                        <span class="banner-icon" id="wish-banner-icon">🕯️</span>
+                        <span class="banner-text" id="wish-banner-text">5 Candles are glowing with warm flames! Make
+                            your secret wish and blow them out!</span>
+                    </div>
+
+                    <div class="cake-btn-row">
+                        <button class="btn-action-cake" id="btn-blow-candles">
+                            <span>💨</span> Blow Out All Candles
+                        </button>
+                        <button class="btn-action-cake outline" id="btn-relight-candles">
+                            <span>🔥</span> Relight Candles
+                        </button>
+                        <button class="btn-action-cake mic-btn" id="btn-mic-blow">
+                            <span>🎤</span> Blow Using Microphone
+                        </button>
+                    </div>
+
+                    <!-- Enchanted In-Page Wish Blessing Card (Smooth & Non-Intrusive) -->
+                    <div class="wish-manifestation-card" id="wish-manifestation-card">
+                        <div class="manifest-aura"></div>
+                        <div class="manifest-header">
+                            <span class="manifest-star-icon">✨</span>
+                            <span class="manifest-pill">💫 Wish Sealed in the Stars 💫</span>
+                            <span class="manifest-star-icon">✨</span>
+                        </div>
+                        <h3 class="manifest-title">Your 21st Birthday Wish is Set Free!</h3>
+                        <p class="manifest-blessing">
+                            "As the candle smoke rises to the stars, your secret wish is carried across the cosmos. May
+                            your 21st chapter be filled with boundless happiness, thrilling adventures, peace in your
+                            heart, and every dream you cherish coming true!" 💖
+                        </p>
+                        <div class="manifest-footer">
+                            <span class="manifest-sparkle-chip">👑 Born Oct 16, 2005 • Sweet 21</span>
+                            <span class="manifest-scroll-prompt">Scroll down to explore your scrapbook 📸 ↓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: MEMORY LANE POLAROID SCRAPBOOK -->
+        <section class="section-container memories-section" id="memories-section">
+            <div class="section-header">
+                <span class="section-pill">📸 Treasured Scrapbook</span>
+                <h2 class="section-title">Our Golden Memories & Adventures</h2>
+                <p class="section-subtitle">Every photograph holds a million smiles, infinite laughter, and a friendship
+                    made of gold.</p>
+            </div>
+
+            <!-- 3D Tilt & Flip Polaroid Gallery Grid -->
+            <div class="polaroid-grid" id="polaroid-grid">
+
+                <!-- Polaroid 1: Pure Goofiness & Laughter -->
+                <div class="polaroid-card" data-category="laugh" data-index="0" data-tilt>
+                    <div class="washi-tape tape-top-right tape-style-1"></div>
+                    <div class="polaroid-flipper">
+                        <!-- FRONT -->
+                        <div class="polaroid-face polaroid-front" onclick="openMemoryModal(0)">
+                            <div class="polaroid-img-container">
+                                <img src="assets/memory1.jpg" alt="Pure Chaos & Goofy Vibes" class="polaroid-img"
+                                    loading="lazy">
+                                <div class="polaroid-zoom-hint"><span>🔍 Tap to view story</span></div>
+                                <div class="polaroid-sparkle-fx"></div>
+                            </div>
+                            <div class="polaroid-caption-block">
+                                <div class="polaroid-handwriting">Pure Chaos & Goofy Vibes 🤪</div>
+                                <p class="polaroid-subtext">"When being goofy together is a billion times better than
+                                    looking aesthetic!"</p>
+                                <div class="polaroid-meta">
+                                    <span class="polaroid-date">Silly Hours</span>
+                                    <span class="polaroid-tag">😂 Silly Queen</span>
+                                </div>
+                            </div>
+                            <div class="polaroid-card-actions">
+                                <button class="btn-polaroid-flip" onclick="event.stopPropagation(); flipPolaroid(0);"
+                                    title="Flip for secret handwritten note">
+                                    <span>🔄 Flip Secret Note</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BACK (Vintage Handwritten Postcard) -->
+                        <div class="polaroid-face polaroid-back" onclick="flipPolaroid(0)">
+                            <div class="polaroid-back-inner">
+                                <div class="polaroid-postmark">
+                                    <div class="stamp-box">
+                                        <span class="stamp-icon">🤪</span>
+                                        <small>OCT 16</small>
+                                    </div>
+                                    <div class="postmark-lines">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="polaroid-back-header">
+                                    <span class="back-title">Secret Memory Note 💌</span>
+                                    <span class="back-badge">No Filter Zone</span>
+                                </div>
+                                <div class="polaroid-back-text">
+                                    "Dear Grace, only with you can anyone be this unapologetically silly and authentic!
+                                    Your goofy expressions, sudden bursts of laughter, and contagious humor can
+                                    instantly turn any gloomy day into pure joy. Never lose your playful spark!"
+                                </div>
+                                <div class="polaroid-back-footer">
+                                    <div class="back-sig">— Partner in Chaos, Yash 🤪❤️</div>
+                                    <button class="btn-flip-back" onclick="event.stopPropagation(); flipPolaroid(0);">
+                                        <span>🔄 View Photo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 2: Shadows in the Sun / Aesthetic Bond -->
+                <div class="polaroid-card" data-category="aesthetic" data-index="1" data-tilt>
+                    <div class="washi-tape tape-top-left tape-style-2"></div>
+                    <div class="polaroid-flipper">
+                        <!-- FRONT -->
+                        <div class="polaroid-face polaroid-front" onclick="openMemoryModal(1)">
+                            <div class="polaroid-img-container">
+                                <img src="assets/memory2.jpg" alt="Shadows In The Sun" class="polaroid-img"
+                                    loading="lazy">
+                                <div class="polaroid-zoom-hint"><span>🔍 Tap to view story</span></div>
+                                <div class="polaroid-sparkle-fx"></div>
+                            </div>
+                            <div class="polaroid-caption-block">
+                                <div class="polaroid-handwriting">Shadows In The Sun 🌅✨</div>
+                                <p class="polaroid-subtext">"Two silhouettes on an afternoon wall — where silence speaks
+                                    a million words."</p>
+                                <div class="polaroid-meta">
+                                    <span class="polaroid-date">Golden Hour</span>
+                                    <span class="polaroid-tag">✨ Aesthetic Soul</span>
+                                </div>
+                            </div>
+                            <div class="polaroid-card-actions">
+                                <button class="btn-polaroid-flip" onclick="event.stopPropagation(); flipPolaroid(1);"
+                                    title="Flip for secret handwritten note">
+                                    <span>🔄 Flip Secret Note</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="polaroid-face polaroid-back" onclick="flipPolaroid(1)">
+                            <div class="polaroid-back-inner">
+                                <div class="polaroid-postmark">
+                                    <div class="stamp-box">
+                                        <span class="stamp-icon">🌅</span>
+                                        <small>OCT 16</small>
+                                    </div>
+                                    <div class="postmark-lines">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="polaroid-back-header">
+                                    <span class="back-title">Secret Memory Note 💌</span>
+                                    <span class="back-badge">Golden Hour</span>
+                                </div>
+                                <div class="polaroid-back-text">
+                                    "Two silhouettes cast upon the golden afternoon sun. Even when shadows fade into
+                                    twilight, our bond remains steadfast and unwavering. Through every high and low, I
+                                    know I have a true friend who stands by me no matter what."
+                                </div>
+                                <div class="polaroid-back-footer">
+                                    <div class="back-sig">— Side by side through everything ✨</div>
+                                    <button class="btn-flip-back" onclick="event.stopPropagation(); flipPolaroid(1);">
+                                        <span>🔄 View Photo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 3: Twinning Flannel Shirts & Bestie Telepathy -->
+                <div class="polaroid-card" data-category="vibes" data-index="2" data-tilt>
+                    <div class="washi-tape tape-center tape-style-3"></div>
+                    <div class="polaroid-flipper">
+                        <!-- FRONT -->
+                        <div class="polaroid-face polaroid-front" onclick="openMemoryModal(2)">
+                            <div class="polaroid-img-container">
+                                <img src="assets/memory3.jpg" alt="Twinning Flannels & Telepathic Vibes"
+                                    class="polaroid-img" loading="lazy">
+                                <div class="polaroid-zoom-hint"><span>🔍 Tap to view story</span></div>
+                                <div class="polaroid-sparkle-fx"></div>
+                            </div>
+                            <div class="polaroid-caption-block">
+                                <div class="polaroid-handwriting">Twinning & Telepathy 👯‍♀️💙</div>
+                                <p class="polaroid-subtext">"Matching checkered shirts with zero prior planning — 100%
+                                    bestie telepathy!"</p>
+                                <div class="polaroid-meta">
+                                    <span class="polaroid-date">Vibe Check</span>
+                                    <span class="polaroid-tag">💙 Twinning Duo</span>
+                                </div>
+                            </div>
+                            <div class="polaroid-card-actions">
+                                <button class="btn-polaroid-flip" onclick="event.stopPropagation(); flipPolaroid(2);"
+                                    title="Flip for secret handwritten note">
+                                    <span>🔄 Flip Secret Note</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="polaroid-face polaroid-back" onclick="flipPolaroid(2)">
+                            <div class="polaroid-back-inner">
+                                <div class="polaroid-postmark">
+                                    <div class="stamp-box">
+                                        <span class="stamp-icon">💙</span>
+                                        <small>OCT 16</small>
+                                    </div>
+                                    <div class="postmark-lines">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="polaroid-back-header">
+                                    <span class="back-title">Secret Memory Note 💌</span>
+                                    <span class="back-badge">Telepathic Bond</span>
+                                </div>
+                                <div class="polaroid-back-text">
+                                    "When we show up wearing matching flannel checkered shirts with zero prior
+                                    coordination! 😂 If that isn't undeniable cosmic proof of our bestie connection, I
+                                    don't know what is. You + Me = The Ultimate Unstoppable Duo."
+                                </div>
+                                <div class="polaroid-back-footer">
+                                    <div class="back-sig">— The Flannel Squad 👯‍♀️✨</div>
+                                    <button class="btn-flip-back" onclick="event.stopPropagation(); flipPolaroid(2);">
+                                        <span>🔄 View Photo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 4: Birthday Roses Bouquet -->
+                <div class="polaroid-card" data-category="sweet" data-index="3" data-tilt>
+                    <div class="washi-tape tape-top-right tape-style-4"></div>
+                    <div class="polaroid-flipper">
+                        <!-- FRONT -->
+                        <div class="polaroid-face polaroid-front" onclick="openMemoryModal(3)">
+                            <div class="polaroid-img-container">
+                                <img src="assets/memory4.jpg" alt="Blooms Fit For A Queen"
+                                    class="polaroid-img polaroid-img-bouquet" loading="lazy">
+                                <div class="polaroid-zoom-hint"><span>🔍 Tap to view story</span></div>
+                                <div class="polaroid-sparkle-fx"></div>
+                            </div>
+                            <div class="polaroid-caption-block">
+                                <div class="polaroid-handwriting">Blooms Fit For A Queen 💐🌹</div>
+                                <p class="polaroid-subtext">"Crimson and golden roses wrapped in luxury black & gold for
+                                    your 21st!"</p>
+                                <div class="polaroid-meta">
+                                    <span class="polaroid-date">Royal Bouquet</span>
+                                    <span class="polaroid-tag">👑 Royal Blooms</span>
+                                </div>
+                            </div>
+                            <div class="polaroid-card-actions">
+                                <button class="btn-polaroid-flip" onclick="event.stopPropagation(); flipPolaroid(3);"
+                                    title="Flip for secret handwritten note">
+                                    <span>🔄 Flip Secret Note</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="polaroid-face polaroid-back" onclick="flipPolaroid(3)">
+                            <div class="polaroid-back-inner">
+                                <div class="polaroid-postmark">
+                                    <div class="stamp-box">
+                                        <span class="stamp-icon">🌹</span>
+                                        <small>OCT 16</small>
+                                    </div>
+                                    <div class="postmark-lines">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="polaroid-back-header">
+                                    <span class="back-title">Secret Memory Note 💌</span>
+                                    <span class="back-badge">Sweet 21</span>
+                                </div>
+                                <div class="polaroid-back-text">
+                                    "Hand-picked crimson red & vibrant golden roses wrapped with love. Just a small
+                                    reminder of how deeply valued, cherished, and irreplaceable you are in my life.
+                                    Wishing you a year as bright and beautiful as these blooms!"
+                                </div>
+                                <div class="polaroid-back-footer">
+                                    <div class="back-sig">— Only the finest for you, Queen 🌹💖</div>
+                                    <button class="btn-flip-back" onclick="event.stopPropagation(); flipPolaroid(3);">
+                                        <span>🔄 View Photo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 5: Golden Hours & Endless Smiles -->
+                <div class="polaroid-card" data-category="sweet" data-index="4" data-tilt>
+                    <div class="washi-tape tape-top-left tape-style-5"></div>
+                    <div class="polaroid-flipper">
+                        <!-- FRONT -->
+                        <div class="polaroid-face polaroid-front" onclick="openMemoryModal(4)">
+                            <div class="polaroid-img-container">
+                                <img src="assets/memory5.jpg" alt="Golden Hours & Endless Smiles" class="polaroid-img"
+                                    loading="lazy">
+                                <div class="polaroid-zoom-hint"><span>🔍 Tap to view story</span></div>
+                                <div class="polaroid-sparkle-fx"></div>
+                            </div>
+                            <div class="polaroid-caption-block">
+                                <div class="polaroid-handwriting">Golden Hours & Smiles 🌸✨</div>
+                                <p class="polaroid-subtext">"Dressed in gold, surrounded by sunshine, and smiling
+                                    because life is better together."</p>
+                                <div class="polaroid-meta">
+                                    <span class="polaroid-date">Yash & Grace</span>
+                                    <span class="polaroid-tag">💫 Core Memory</span>
+                                </div>
+                            </div>
+                            <div class="polaroid-card-actions">
+                                <button class="btn-polaroid-flip" onclick="event.stopPropagation(); flipPolaroid(4);"
+                                    title="Flip for secret handwritten note">
+                                    <span>🔄 Flip Secret Note</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="polaroid-face polaroid-back" onclick="flipPolaroid(4)">
+                            <div class="polaroid-back-inner">
+                                <div class="polaroid-postmark">
+                                    <div class="stamp-box">
+                                        <span class="stamp-icon">💫</span>
+                                        <small>OCT 16</small>
+                                    </div>
+                                    <div class="postmark-lines">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="polaroid-back-header">
+                                    <span class="back-title">Secret Memory Note 💌</span>
+                                    <span class="back-badge">Pure Sunshine</span>
+                                </div>
+                                <div class="polaroid-back-text">
+                                    "The warmest afternoon smiles and pure sunshine. Having you, Grace, as my best
+                                    friend makes even the most ordinary day feel like an unforgettable adventure.
+                                    Grateful for every single second of this journey with you!"
+                                </div>
+                                <div class="polaroid-back-footer">
+                                    <div class="back-sig">— Forever & always, Yash ❤️</div>
+                                    <button class="btn-flip-back" onclick="event.stopPropagation(); flipPolaroid(4);">
+                                        <span>🔄 View Photo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 6: Foodie Dates & Sassy Looks -->
+                <div class="polaroid-card" data-category="laugh" data-index="5" data-tilt>
+                    <div class="washi-tape tape-top-right tape-style-2"></div>
+                    <div class="polaroid-flipper">
+                        <!-- FRONT -->
+                        <div class="polaroid-face polaroid-front" onclick="openMemoryModal(5)">
+                            <div class="polaroid-img-container">
+                                <img src="assets/memory6.jpg" alt="Foodie Chronicles & Sassy Looks" class="polaroid-img"
+                                    loading="lazy">
+                                <div class="polaroid-zoom-hint"><span>🔍 Tap to view story</span></div>
+                                <div class="polaroid-sparkle-fx"></div>
+                            </div>
+                            <div class="polaroid-caption-block">
+                                <div class="polaroid-handwriting">Foodie Dates & Sassy Looks 😎🍽️</div>
+                                <p class="polaroid-subtext">"When the food is taking too long and we decide to take
+                                    candid selfies instead!"</p>
+                                <div class="polaroid-meta">
+                                    <span class="polaroid-date">Foodie Chronicles</span>
+                                    <span class="polaroid-tag">😎 Iconic Duo</span>
+                                </div>
+                            </div>
+                            <div class="polaroid-card-actions">
+                                <button class="btn-polaroid-flip" onclick="event.stopPropagation(); flipPolaroid(5);"
+                                    title="Flip for secret handwritten note">
+                                    <span>🔄 Flip Secret Note</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="polaroid-face polaroid-back" onclick="flipPolaroid(5)">
+                            <div class="polaroid-back-inner">
+                                <div class="polaroid-postmark">
+                                    <div class="stamp-box">
+                                        <span class="stamp-icon">🍕</span>
+                                        <small>OCT 16</small>
+                                    </div>
+                                    <div class="postmark-lines">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="polaroid-back-header">
+                                    <span class="back-title">Secret Memory Note 💌</span>
+                                    <span class="back-badge">Cafe Banter</span>
+                                </div>
+                                <div class="polaroid-back-text">
+                                    "Dear Grace, hanging out with you over good food and endless banter is my absolute
+                                    favorite pastime. Whether we're judging everyone in the room or complaining about
+                                    how hungry we are, there's nobody else I'd rather share a table (or my fries) with!
+                                    Stay sassy, stay iconic."
+                                </div>
+                                <div class="polaroid-back-footer">
+                                    <div class="back-sig">— Your Foodie Partner in Crime, Yash 🍕✨</div>
+                                    <button class="btn-flip-back" onclick="event.stopPropagation(); flipPolaroid(5);">
+                                        <span>🔄 View Photo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sweet Quote Ribbon -->
+            <div class="memory-custom-prompt">
+                <div class="scrapbook-quote-pill">
+                    <span>✨ "Every single memory with you is a treasure I will hold close to my heart forever." ✨</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: THE ENCHANTED WISHING JAR / 100 REASONS -->
+        <section class="section-container wishing-jar-section" id="wishing-jar-section">
+            <div class="section-header">
+                <span class="section-pill">🔮 Magic Wishing Jar</span>
+                <h2 class="section-title">Reasons Why You're Truly Incomparable</h2>
+                <p class="section-subtitle">Tap the glowing jar to pull out an enchanted origami scroll packed with
+                    love, praise, and smiles.</p>
+            </div>
+
+            <div class="wishing-jar-stage">
+                <div class="jar-interactive-wrapper" id="jar-trigger" onclick="drawWishScroll()">
+                    <div class="jar-aura"></div>
+                    <div class="glass-jar-container">
+                        <div class="jar-lid"></div>
+                        <div class="jar-body">
+                            <div class="jar-stars">
+                                <span class="origami-star star-1">⭐</span>
+                                <span class="origami-star star-2">💖</span>
+                                <span class="origami-star star-3">✨</span>
+                                <span class="origami-star star-4">🌟</span>
+                                <span class="origami-star star-5">💫</span>
+                                <span class="origami-star star-6">🎀</span>
+                            </div>
+                            <div class="jar-label">
+                                <span>Reasons Why You Are Magical 🌟</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jar-tap-cue">
+                        <span>✨ Tap The Jar to Draw a Scroll! ✨</span>
+                    </div>
+                </div>
+
+                <!-- Display Box For Drawn Reason -->
+                <div class="drawn-scroll-display" id="drawn-scroll-display">
+                    <div class="scroll-parchment" id="scroll-parchment">
+                        <div class="scroll-seal">💖</div>
+                        <div class="scroll-number" id="scroll-number">Reason #1 of ∞</div>
+                        <div class="scroll-quote" id="scroll-quote">
+                            "Your contagious laugh can instantly illuminate the darkest room and brighten anyone's day!"
+                        </div>
+                        <div class="scroll-footer">
+                            <button class="btn-draw-again" onclick="drawWishScroll()">
+                                <span>📜</span> Draw Another Reason!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: THE GOLDEN WAX-SEALED SECRET LETTER -->
+        <section class="section-container letter-section" id="letter-section">
+            <div class="section-header">
+                <span class="section-pill">💌 Confidential & Heartfelt</span>
+                <h2 class="section-title">A Secret Letter Written From The Heart</h2>
+                <p class="section-subtitle">Break the golden wax seal to unfold words that come straight from the soul.
+                </p>
+            </div>
+
+            <div class="envelope-ceremony-wrapper">
+
+                <!-- The 3D Vintage Envelope -->
+                <div class="vintage-envelope" id="vintage-envelope" onclick="openWaxLetter()">
+                    <div class="envelope-front">
+                        <div class="envelope-flap" id="envelope-flap"></div>
+                        <div class="wax-seal" id="wax-seal" title="Click to break the seal and read!">
+                            <div class="wax-seal-inner">
+                                <span>👑</span>
+                            </div>
+                        </div>
+                        <div class="envelope-stamp">
+                            <span>SPECIAL 21ST EDITION</span>
+                            <small>Born Oct 16, 2005</small>
+                        </div>
+                        <div class="envelope-address">
+                            <span>To: The Most Wonderful Birthday Queen</span>
+                            <strong class="dynamic-recipient">Grace (Born Oct 16, 2005)</strong>
+                            <p>From: Yash ❤️</p>
+                        </div>
+                        <div class="tap-seal-hint">
+                            <span>👆 Click Seal to Open Letter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Unfolded Letter Parchment -->
+                <div class="unfolded-letter-card" id="unfolded-letter-card">
+                    <div class="parchment-border">
+                        <div class="letter-header">
+                            <span class="letter-date" id="letter-current-date">October 16, 2026</span>
+                            <div class="letter-header-right">
+                                <span class="letter-badge">🌟 21st Birthday Milestone Edition • Born Oct 16, 2005</span>
+                                <button class="letter-close-top" onclick="closeWaxLetter()"
+                                    title="Fold letter back">✕</button>
+                            </div>
+                        </div>
+
+                        <!-- Language Switcher Tabs -->
+                        <div class="letter-lang-switcher">
+                            <button class="lang-tab active" id="btn-lang-ta" onclick="switchLetterLang('ta')"
+                                title="Show Original Tamil">
+                                <span>📜 தமிழ் (Original)</span>
+                            </button>
+                            <button class="lang-tab" id="btn-lang-en" onclick="switchLetterLang('en')"
+                                title="Show English Translation">
+                                <span>🌐 English (Translation)</span>
+                            </button>
+                        </div>
+
+                        <!-- 1. Original Tamil Letter View -->
+                        <div class="letter-view" id="letter-view-ta">
+                            <h3 class="letter-salutation">
+                                உனக்கு இனிய பிறந்தநாள் வாழ்த்துக்கள், என்னோட ஸ்பெஷலான நபரே! ❤️🎂
+                            </h3>
+
+                            <div class="letter-body-text" id="typewriter-letter-content">
+                                <p>
+                                    உண்மையா சொல்லணும்னா, நாம எப்படி சந்திச்சோம், எப்படி இவ்வளவு நெருக்கமானோம் அப்படின்னு
+                                    இன்னைக்கும் எனக்குத் தெரியல. ஆனா, நீ என் வாழ்க்கையில இவ்வளவு ஸ்பெஷலான ஒருத்தரா
+                                    மாறுவன்னு நான் கொஞ்சம் கூட நினைக்கல. நான் நிறைய பேரை சந்திச்சிருக்கேன், ஆனா உன்னை
+                                    மாதிரி ஒருத்தரை இதுவரைக்கும் சந்திச்சதே இல்ல. நான் எதிர்பார்க்காத நேரத்துல என்
+                                    வாழ்க்கைக்குள்ள வந்த நீ, ரொம்ப நாளா நான் உணராத ஒரு சந்தோஷத்தை மறுபடியும் எனக்குக்
+                                    கொடுத்திருக்க. ❤️
+                                </p>
+                                <p>
+                                    இன்னைக்கு உன்னோட ஸ்பெஷலான நாள். இந்த நாள்ல நீ எனக்கு எவ்வளவு முக்கியமானவன்னு
+                                    உன்கிட்ட சொல்லணும்னு ஆசைப்படுறேன். உனக்கு எப்போதும் நிறைய சந்தோஷம் கிடைக்கணும்,
+                                    மனசார சிரிக்கணும், மனசுல நிம்மதி இருக்கணும், உன்னோட மனசு ஆசைப்படுற எல்லா நல்ல
+                                    விஷயங்களும் உனக்குக் கிடைக்கணும். உன்னோட வாழ்க்கையில ஆரம்பிக்கிற இந்தப் புதிய
+                                    வருடம், நீ சிரிக்கிறதுக்கு நிறைய காரணங்களைக் கொடுக்கணும். உன்னோட எல்லா கனவுகளும்
+                                    நிஜமாகணும். ஏன்னா, நீ எப்போதும் எல்லா நல்ல விஷயங்களுக்கும் தகுதியானவ. உனக்கு
+                                    எப்போதும் சிறந்த விஷயங்கள்தான் கிடைக்கணும். 🫶🏻
+                                </p>
+                                <p>
+                                    நான் உன்னோட வாழ்க்கையில எவ்வளவு மாற்றத்தை ஏற்படுத்தியிருக்கேன்னு உனக்குத் தெரியாம
+                                    இருக்கலாம். ஆனா, நீ என் கூட இருக்கிறது எனக்கு எவ்வளவு முக்கியம்னு வார்த்தைகளால
+                                    சொல்லவே முடியாது. உன்னோட சந்தோஷம் எனக்கு உண்மையாவே ரொம்ப முக்கியம். உன்னோட முகத்துல
+                                    சிரிப்பைக் கொண்டு வர்ற காரணங்கள்ல ஒருத்தரா இருக்க என்னால முடிஞ்ச எல்லா முயற்சியும்
+                                    எப்போதும் செய்வேன். நீ இன்னைக்கு மட்டும் இல்ல, ஒவ்வொரு நாளும் சந்தோஷமா
+                                    இருக்கணும்னுதான் நான் ஆசைப்படுறேன். ❤️
+                                </p>
+                                <p>
+                                    நம்ம எதிர்காலத்துல என்ன நடக்கும்னு எனக்குத் தெரியல. ஆனா, <strong>வாழ்க்கையில கஷ்டமான
+                                        சூழ்நிலைகள் வர்றதால மட்டும் நான் உன்னை இழக்க விரும்பல.</strong> உன்னைப்
+                                    புரிஞ்சுக்க முயற்சி செய்வேன், உனக்குத் துணையா இருப்பேன். சில நேரங்கள்ல நீ எவ்வளவு
+                                    ஸ்பெஷலானவன்னு நீயே மறந்துட்டா கூட, அதை உனக்கு மறுபடியும் நினைவுபடுத்துவேன். என்கிட்ட
+                                    நீ எப்போதும் சந்தோஷமா இருக்கிற மாதிரி நடிக்க வேண்டிய அவசியமே இல்ல. உன்னோட சந்தோஷம்,
+                                    உன்னோட கண்ணீர், நீ அமைதியா இருக்கிற நேரங்கள், உன்னோட உணர்வுகள் எல்லாமே எனக்கு
+                                    முக்கியம். நீ எப்படி உணர்றன்னு எனக்கு முக்கியம். நீ எப்போதும் உன்னோட உண்மையான
+                                    மனநிலையோட என்கிட்ட இருக்கலாம். ❤️🩹
+                                </p>
+                                <p>
+                                    <strong>நாம எப்படி சந்திச்சோம்னு எனக்குத் தெரியல, ஆனா நாம சந்திச்சதுக்கு நான் ரொம்ப
+                                        சந்தோஷப்படுறேன்.</strong> இந்த உலகத்துல இத்தனை பேர் இருந்தாலும், உன்னைத்
+                                    தெரிஞ்சுக்கவும், உன்கூட இவ்வளவு நெருக்கமாகவும் இருக்க எனக்கு ஒரு வாய்ப்பு
+                                    கிடைச்சதுக்கு நான் உண்மையாவே நன்றியோட இருக்கேன். நீ என் வாழ்க்கையில இருக்கிற இன்னொரு
+                                    சாதாரண நபர் மட்டும் கிடையாது. நான் மனசார அக்கறை காட்டுற, எனக்கு ரொம்ப முக்கியமான
+                                    ஒருத்தரா நீ மாறிட்ட. அதனாலதான் உன்னை இழக்கவே கூடாதுன்னு நினைக்கிறேன். ❤️🫂
+                                </p>
+                                <p>
+                                    உன்னோட பிறந்தநாள்ல நான் ஆசைப்படுற ஒரே விஷயம் என்னன்னா, வாழ்க்கை உனக்கு எப்போதும்
+                                    நல்லதையே கொடுக்கணும், உன்னோட சிரிப்பு ஒருநாளும் மறையக்கூடாது, நீ சந்தோஷமா
+                                    இருக்கிறதுக்கு எப்போதும் ஏதாவது ஒரு காரணம் கிடைச்சுக்கிட்டே இருக்கணும். வாழ்க்கை சில
+                                    நேரங்கள்ல ரொம்ப கஷ்டமா இருக்கிற மாதிரி தோணும்போது கூட, உனக்காக மனசார நல்லதை மட்டுமே
+                                    நினைக்கிற ஒருத்தர் இருக்காங்கன்னு நீ நினைச்சுப் பார்க்கணும். அந்த ஒருத்தரா நான்
+                                    இருக்கணும்னு ஆசைப்படுறேன். ❤️
+                                </p>
+                                <p>
+                                    <strong>மறுபடியும் உனக்கு இனிய பிறந்தநாள் வாழ்த்துக்கள்! 🎂❤️</strong>
+                                </p>
+                                <p>
+                                    நீ என் வாழ்க்கையில எவ்வளவு சந்தோஷத்தைக் கொண்டு வந்திருக்கியோ, அதே அளவு சந்தோஷம்
+                                    உன்னோட வாழ்க்கை முழுக்க நிறையணும். நீ இப்போ எப்படி அழகான மனசு கொண்ட நபரா இருக்கியோ,
+                                    அப்படியே எப்போதும் இரு. தொடர்ந்து சிரிச்சுக்கிட்டே இரு. நீ எனக்கு எவ்வளவு
+                                    ஸ்பெஷலானவன்னு மட்டும் ஒருபோதும் மறந்துடாத.
+                                </p>
+                                <p class="letter-closing">
+                                    <strong>நீ எப்போதும் சந்தோஷமா இருக்கணும்னுதான் நான் மனசார ஆசைப்படுறேன். உன்னோட
+                                        சந்தோஷத்துக்காக நான் எப்போதும் உனக்கு ஆதரவா இருப்பேன். நீ எனக்கு எவ்வளவு
+                                        முக்கியமானவன்னு வார்த்தைகளால முழுசா சொல்லவே முடியாது. நீ என் வாழ்க்கையில
+                                        எனக்குத் தெரிஞ்சதை விடவும், நான் சொல்ல முடிஞ்சதை விடவும் அதிகமா முக்கியமானவ.
+                                        ❤️🫶🏻</strong>
+                                </p>
+                            </div>
+
+                            <div class="letter-signature-block">
+                                <div class="signature-text">— நிறைய அன்புடன்,</div>
+                                <div class="signature-name dynamic-sender">Yash ❤️</div>
+                            </div>
+                        </div>
+
+                        <!-- 2. English Translation Letter View -->
+                        <div class="letter-view" id="letter-view-en" style="display: none;">
+                            <h3 class="letter-salutation-en">
+                                HAPPIEST BIRTHDAY TO YOU, MY SPECIAL PERSON! ❤️🎂✨
+                            </h3>
+
+                            <div class="letter-body-text letter-body-text-en">
+                                <p>
+                                    Honestly, I still don't know how we met or how we became this close, but I never
+                                    imagined that you would become such a special part of my life. I've met so many
+                                    people, but I've never met anyone quite like you. You came into my life unexpectedly
+                                    and brought back a kind of happiness I hadn't felt in a long time. ❤️
+                                </p>
+                                <p>
+                                    On your special day, I just want to tell you how much you mean to me. I wish you
+                                    endless happiness, genuine smiles, peace of mind, and all the beautiful things your
+                                    heart deserves. I hope this new chapter of your life brings you countless reasons to
+                                    smile and makes all your dreams come true. You deserve nothing less than the best.
+                                    🫶🏻
+                                </p>
+                                <p>
+                                    Maybe you don't realize how much you've changed my life, but your presence means
+                                    more to me than words can explain. Your happiness genuinely matters to me, and I'll
+                                    always try my best to be one of the reasons behind your smile. I want to see you
+                                    happy, not just today, but every single day. ❤️
+                                </p>
+                                <p>
+                                    I don't know what the future holds for us, but <strong>I don't want to lose you just
+                                        because life gets difficult.</strong> I'll try to understand you, stand by you,
+                                    and remind you how special you are whenever you forget it. You don't always have to
+                                    pretend to be okay with me. Your happiness, your tears, your silence, and your
+                                    feelings all matter to me. ❤️🩹
+                                </p>
+                                <p>
+                                    <strong>I DON'T KNOW HOW WE MET, BUT I'M SO GLAD WE DID.</strong> Out of all the
+                                    people in this world, I'm grateful that I got the chance to know you and become this
+                                    close to you. You're not just another person in my life; you've become someone I
+                                    genuinely care about and never want to lose. ❤️🫂
+                                </p>
+                                <p>
+                                    On your birthday, my only wish is that life treats you kindly, that your smile never
+                                    fades, and that you always find reasons to be happy. And whenever life feels heavy,
+                                    I hope you remember that you have someone who truly wishes the best for you. ❤️
+                                </p>
+                                <p class="letter-closing">
+                                    <strong>HAPPY BIRTHDAY ONCE AGAIN! 🎂✨ May your life be filled with the happiness
+                                        you bring into mine. Stay the same beautiful person you are, keep smiling, and
+                                        never forget how special you are to me. I'M ALWAYS ROOTING FOR YOUR HAPPINESS.
+                                        YOU MEAN MORE TO ME THAN WORDS CAN EVER EXPLAIN. ❤️🫶🏻</strong>
+                                </p>
+                            </div>
+
+                            <div class="letter-signature-block">
+                                <div class="signature-text">— With lots of love,</div>
+                                <div class="signature-name dynamic-sender">Yash ❤️</div>
+                            </div>
+                        </div>
+
+                        <div class="letter-actions">
+                            <button class="btn-toggle-translation" id="btn-toggle-lang"
+                                onclick="toggleLetterTranslation()">
+                                <span>🌐</span> Read English Translation
+                            </button>
+                            <button class="btn-fold-letter" onclick="closeWaxLetter()">
+                                <span>✉️</span> Fold Letter Back Into Envelope
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: BESTIE TRIVIA CHALLENGE -->
+        <section class="section-container quiz-section" id="quiz-section">
+            <div class="section-header">
+                <span class="section-pill">🏆 The Bestie Championship</span>
+                <h2 class="section-title">How Well Do You Know Our Friendship?</h2>
+                <p class="section-subtitle">Take this quick fun 4-question challenge to claim your official VIP Birthday
+                    Crown!</p>
+            </div>
+
+            <div class="quiz-card-wrapper" id="quiz-card-wrapper">
+                <div class="quiz-progress-bar">
+                    <div class="progress-fill" id="quiz-progress-fill" style="width: 25%;"></div>
+                </div>
+
+                <div class="quiz-question-box" id="quiz-question-box">
+                    <div class="quiz-step" id="quiz-step-label">Question 1 of 4</div>
+                    <h3 class="quiz-question-text" id="quiz-question-text">What is the secret superpower of our
+                        friendship?</h3>
+
+                    <div class="quiz-options-list" id="quiz-options-list">
+                        <!-- Options generated dynamically via JS -->
+                    </div>
+                </div>
+
+                <!-- Quiz Completion Trophy Screen -->
+                <div class="quiz-result-screen" id="quiz-result-screen" style="display: none;">
+                    <div class="trophy-icon">🏆 👑 🌟</div>
+                    <h2>CHAMPION OF MY HEART!</h2>
+                    <p class="result-message">
+                        Score: <span id="quiz-score-display">100%</span> — Certified as the World's Most Awesome Best
+                        Friend! 💖
+                    </p>
+                    <div class="result-actions">
+                        <button class="btn-primary" onclick="restartQuiz()"><span>🔄</span> Play Again</button>
+                        <button class="btn-accent" onclick="scrollToSection('hero')"><span>🎉</span> Back to
+                            Top</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: DOWNLOADABLE KEEPSAKE SOUVENIR CARD -->
+        <section class="section-container souvenir-section">
+            <div class="souvenir-card">
+                <div class="souvenir-content">
+                    <span class="souvenir-pill">🎁 Digital Birthday Keepsake</span>
+                    <h2>Download Your Birthday Souvenir Card</h2>
+                    <p>Save this gorgeous high-definition commemorative card to keep on your phone or share on Instagram
+                        / WhatsApp!</p>
+                    <button class="btn-primary" id="btn-download-card">
+                        <span>📥</span> Download Birthday Card (HD Image)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LUXURY FOOTER -->
+        <footer class="luxury-footer">
+            <div class="footer-content">
+                <div class="footer-hearts">💖 ✨ 👑 🌸 💖</div>
+                <p class="footer-main">
+                    Crafted with infinite love and magic for <span class="dynamic-recipient">Grace</span> on her 21st
+                    Birthday.
+                </p>
+                <p class="footer-sub">
+                    May your life always be filled with boundless laughter, love, and starlight. ✨
+                </p>
+                <div class="footer-copyright">
+                    © 2026 Crafted with ❤️ by <span class="dynamic-sender">Yash</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ==========================================
+         INTERACTIVE MEMORY STORY LIGHTBOX MODAL
+         ========================================== -->
+    <div class="memory-modal-backdrop" id="memory-story-modal" aria-hidden="true">
+        <div class="memory-modal-overlay" onclick="closeMemoryModal()"></div>
+        <div class="memory-modal-dialog">
+            <button class="modal-close-btn" onclick="closeMemoryModal()" aria-label="Close modal">✕</button>
+
+            <div class="modal-nav-arrows">
+                <button class="modal-arrow modal-arrow-prev" onclick="navigateMemory(-1)"
+                    title="Previous Memory">‹</button>
+                <button class="modal-arrow modal-arrow-next" onclick="navigateMemory(1)" title="Next Memory">›</button>
+            </div>
+
+            <div class="memory-modal-body">
+                <div class="modal-media-pane">
+                    <div class="modal-img-frame">
+                        <img src="" alt="" id="modal-memory-img" class="modal-memory-img">
+                        <div class="modal-img-glow"></div>
+                        <div class="modal-sparkle-stars">
+                            <span>✨</span><span>💖</span><span>⭐</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-story-pane">
+                    <div class="modal-story-header">
+                        <span class="modal-badge" id="modal-memory-badge">✨ Core Memory</span>
+                        <span class="modal-index-pill" id="modal-memory-counter">1 of 6</span>
+                    </div>
+                    <h3 class="modal-memory-title" id="modal-memory-title">Memory Title</h3>
+                    <div class="modal-memory-date" id="modal-memory-date">Treasured Moment</div>
+
+                    <div class="modal-quote-box">
+                        <span class="quote-mark">“</span>
+                        <p class="modal-memory-story" id="modal-memory-story">Story text goes here...</p>
+                    </div>
+
+                    <div class="modal-memory-footer">
+                        <div class="modal-signature">
+                            <span class="sig-label">Scrapbook Entry:</span>
+                            <span class="sig-name">Yash & Grace ✨</span>
+                        </div>
+                        <div class="modal-hints">
+                            <small>⌨️ Use Left / Right arrow keys to browse</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Canvas For Generating Downloadable Keepsake Postcard -->
+    <canvas id="souvenir-export-canvas" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
